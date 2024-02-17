@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: complete-production-e2e-deployment
+  name: complete-production-e2e-deployment
+  namespace: argocd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: complete-production-e2e-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: complete-production-e2e-deployment
+    spec:
+      containers:
+      - image: vishv3432/vishv3432/pipeline:3
+        name: pipeline
+        resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+        ports:
+          - containerPort: 8080
+status: {}
