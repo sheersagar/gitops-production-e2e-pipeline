@@ -19,7 +19,7 @@ spec:
         app: complete-production-e2e-deployment
     spec:
       containers:
-      - image: vishv3432/pipeline:3
+      - image: vishv3432/pipeline:14
         name: pipeline
         resources:
             limits:
